@@ -1,4 +1,3 @@
 # byGOG-OnlineInstaller
-### Download the latest version software quickly with curl.
-Bu betik, bir online yazılım yükleyici menüsü sunarak kullanıcılara çeşitli yazılımları otomatik olarak indirme ve kurma imkanı sağlar. Kullanıcılar, menüde listelenen yazılımlardan istediklerini seçebilir ve betik bu yazılımların indirme işlemlerini gerçekleştirir.
-Betik, kullanıcılara çeşitli popüler yazılımları tek bir yerden hızlı ve kolay bir şekilde indirme olanağı sunar. Kullanıcılar, seçtikleri yazılımları indirmek için herhangi bir tarayıcı veya yazılım mağazası kullanmadan betiği çalıştırabilirler.
+### Always download and install the latest software quickly with cURL.
+This script allows users to automatically download and install various software by providing an online software installer menu. Users can select any of the software listed in the menu and the script will perform the download of that software. The script allows users to quickly and easily download a variety of popular software from one place. Users can run the script without using any browser or software store to download the software of their choice.
