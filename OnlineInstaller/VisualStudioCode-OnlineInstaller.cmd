@@ -1,7 +1,7 @@
 @ECHO OFF
 SETLOCAL
-SET OUTPUT=VSCodeUserSetup.exe
-SET NAME=Visual Studio Code
+SET "OUTPUT=VSCodeUserSetup.exe"
+SET "NAME=Visual Studio Code"
 TITLE %NAME% Online Installer
 
 REM Set the download URL based on the processor architecture
