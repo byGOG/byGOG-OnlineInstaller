@@ -13,13 +13,17 @@ IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
 
 ECHO ---------------------------------------------------
 ECHO Downloading %NAME%
-curl -# -L -o %TEMP%\%OUTPUT% "%URL%"
+	 curl -# -L -o %TEMP%\%OUTPUT% "%URL%"
 
 ECHO Installing %NAME%...
-start /wait %TEMP%\%OUTPUT% /VERYSILENT /NORESTART /MERGETASKS=!runcode,desktopicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles
+	 start /wait %TEMP%\%OUTPUT% /VERYSILENT /NORESTART /MERGETASKS=!runcode,desktopicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles
 
 ECHO Cleaning temporary files...
-DEL %TEMP%\%OUTPUT%
+	 DEL %TEMP%\%OUTPUT%
+
+ECHO Window minimized or closing %NAME%...
+	 PING 127.0.0.1 -n 15 > nul
+	 powershell -Command "Get-Process Code | ForEach-Object { $_.CloseMainWindow() }"
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------
