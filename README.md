@@ -2,7 +2,7 @@
 
 ![Screenshot](https://docs.google.com/uc?export=download&id=1EG_k9Snb34U1VfrL0hZwUZ-8pBrQnBcn)
 
-`curl -sL#o "%TEMP%\byGOG-OnlineInstaller.cmd" "https://tinyurl.com/2f8ujh6m" && CALL %TEMP%\byGOG-OnlineInstaller.cmd`
+##### `curl -sL#o "%TEMP%\byGOG-OnlineInstaller.cmd" "https://tinyurl.com/2f8ujh6m" && CALL %TEMP%\byGOG-OnlineInstaller.cmd`
 
 ### Always download and install the latest software quickly with cURL.
 This script allows users to automatically download and install various software by providing an online software installer menu. Users can select any of the software listed in the menu and the script will perform the download of that software. The script allows users to quickly and easily download a variety of popular software from one place. Users can run the script without using any browser or software store to download the software of their choice.
