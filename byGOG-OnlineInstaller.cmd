@@ -5,17 +5,17 @@ TITLE %NAME%
 
 :menu
 cls
-echo ============================================================================================================
-echo                                            __          __________  ______
-echo                                           / /_  __  __/ ____/ __ \/ ____/
-echo                                          / __ \/ / / / / __/ / / / / __  
-echo                                         / /_/ / /_/ / /_/ / /_/ / /_/ /  
-echo                                        /_.___/\__, /\____/\____/\____/   
-echo                                              /____/                      
-echo ============================================================================================================
-echo                                           ONLINE SOFTWARE INSTALLER
-echo                                                 [sordum.net] 
-echo ============================================================================================================
+echo =================================================================================================================
+echo                                                __          __________  ______
+echo                                               / /_  __  __/ ____/ __ \/ ____/
+echo                                              / __ \/ / / / / __/ / / / / __  
+echo                                             / /_/ / /_/ / /_/ / /_/ / /_/ /  
+echo                                            /_.___/\__, /\____/\____/\____/   
+echo                                                  /____/                      
+echo =================================================================================================================
+echo                                               ONLINE SOFTWARE INSTALLER
+echo                                                     [sordum.net] 
+echo =================================================================================================================
 echo [n6] .NET Desktop Runtime 6.0  [dl] DeepL                       [ot] Office Tool Plus   [sy] Spotify 
 echo [7z] 7-Zip                     [dc] Discord                     [pt] PowerToys          [sm] Steam
 echo [ap] AIMP                      [et] Everything                  [pv] ProtonVPN          [so] Stremio 
@@ -23,10 +23,11 @@ echo [ad] AnyDesk                   [gc] Google Chrome               [qt] qBitto
 echo [bw] Bitwarden                 [gd] Google Drive                [rs] Rufus              [tg] Telegram
 echo [cc] CCleaner                  [id] Internet Download Manager   [sb] Sandboxie          [vs] Visual Studio Code
 echo [cl] Chocolatey                [mf] Mozilla Firefox             [sp] Scoop              [vm] VLC Media Player 
-echo [cq] CopyQ                     [np] Notepad++                   [sx] ShareX             [wr] WinRAR                                                      
-echo                                                 [e] EXIT 
+echo [cq] CopyQ                     [np] Notepad++                   [sx] ShareX             [wr] WinRAR       
+echo [kc] K-Lite Codec Pack Mega    [bc] Bulk Crap Uninstaller                                               
+echo                                                       [e] Exit 
 
-echo ============================================================================================================
+echo =================================================================================================================
 set choices=
 set /p choices="Please select option:"
 
@@ -161,6 +162,14 @@ for %%o in (!options!) do (
 	  if "%%o"=="vs" (
         echo Installing Visual Studio Code...
         curl -sL#o "%TEMP%\VisualStudioCode-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/VisualStudioCode-OnlineInstaller.cmd" && CALL %TEMP%\VisualStudioCode-OnlineInstaller.cmd
+    )
+	  if "%%o"=="kc" (
+        echo Installing K-Lite Codec Pack Mega...
+        curl -sL#o "%TEMP%\K-LiteCodecPackMega-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/K-LiteCodecPackMega-OnlineInstaller.cmd" && CALL %TEMP%\K-LiteCodecPackMega-OnlineInstaller.cmd
+    )
+	  if "%%o"=="bc" (
+        echo Installing Bulk Crap Uninstaller...
+        curl -sL#o "%TEMP%\BulkCrapUninstaller-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/BulkCrapUninstaller-OnlineInstaller.cmd" && CALL %TEMP%\BulkCrapUninstaller-OnlineInstaller.cmd
     )
 	
 )
