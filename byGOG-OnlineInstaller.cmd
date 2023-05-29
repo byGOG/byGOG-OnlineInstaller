@@ -24,7 +24,7 @@ echo [bw] Bitwarden                 [gd] Google Drive                [rs] Rufus 
 echo [cc] CCleaner                  [id] Internet Download Manager   [sb] Sandboxie          [vs] Visual Studio Code
 echo [cl] Chocolatey                [mf] Mozilla Firefox             [sp] Scoop              [vm] VLC Media Player 
 echo [cq] CopyQ                     [np] Notepad++                   [sx] ShareX             [wr] WinRAR       
-echo [kc] K-Lite Codec Pack Mega    [bc] Bulk Crap Uninstaller                                               
+echo [kc] K-Lite Codec Pack Mega    [bc] Bulk Crap Uninstaller       [dr] DriversCloud.com                                         
 echo                                                       [e] Exit 
 
 echo =================================================================================================================
@@ -43,23 +43,23 @@ for %%o in (!options!) do (
         echo Installing 7-Zip...
         curl -sL#o "%TEMP%\7zip-OnlineInstaller.cmd" "https://github.com/byGOG/byGOG-OnlineInstaller/raw/main/OnlineInstaller/7zip-OnlineInstaller.cmd" && CALL %TEMP%\7zip-OnlineInstaller.cmd
     )
-    if "%%o"=="gc" (
+      if "%%o"=="gc" (
         echo Installing Google Chrome...
         curl -sL#o "%TEMP%\GoogleChrome-OnlineInstaller.cmd" "https://github.com/byGOG/byGOG-OnlineInstaller/raw/main/OnlineInstaller/GoogleChrome-OnlineInstaller.cmd" && CALL %TEMP%\GoogleChrome-OnlineInstaller.cmd
     )
-    if "%%o"=="mf" (
+      if "%%o"=="mf" (
         echo Installing Mozilla Firefox...
         curl -sL#o "%TEMP%\MozillaFirefox-OnlineInstaller.cmd" "https://github.com/byGOG/byGOG-OnlineInstaller/raw/main/OnlineInstaller/MozillaFirefox-OnlineInstaller.cmd" && CALL %TEMP%\MozillaFirefox-OnlineInstaller.cmd
     )
-    if "%%o"=="np" (
+      if "%%o"=="np" (
         echo Installing Notepad++...
         curl -sL#o "%TEMP%\NotepadPlusPlus-OnlineInstaller.cmd" "https://github.com/byGOG/byGOG-OnlineInstaller/raw/main/OnlineInstaller/NotepadPlusPlus-OnlineInstaller.cmd" && CALL %TEMP%\NotepadPlusPlus-OnlineInstaller.cmd
     )
-    if "%%o"=="vm" (
+      if "%%o"=="vm" (
         echo Installing VLC Media Player...
         curl -sL#o "%TEMP%\VLC-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/VLC-OnlineInstaller.cmd" && CALL %TEMP%\VLC-OnlineInstaller.cmd
     )
-    if "%%o"=="wr" (
+      if "%%o"=="wr" (
         echo Installing WinRAR...
         curl -sL#o "%TEMP%\WinRAR-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/WinRAR-OnlineInstaller.cmd" && CALL %TEMP%\WinRAR-OnlineInstaller.cmd
     )
@@ -171,7 +171,14 @@ for %%o in (!options!) do (
         echo Installing Bulk Crap Uninstaller...
         curl -sL#o "%TEMP%\BulkCrapUninstaller-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/BulkCrapUninstaller-OnlineInstaller.cmd" && CALL %TEMP%\BulkCrapUninstaller-OnlineInstaller.cmd
     )
-	
+	  if "%%o"=="qt" (
+        echo Installing qBittorrent...
+        curl -sL#o "%TEMP%\qBittorrent-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/qBittorrent-OnlineInstaller.cmd" && CALL %TEMP%\qBittorrent-OnlineInstaller.cmd
+    )
+	  if "%%o"=="dr" (
+        echo DriversCloud.com...
+        start https://www.driverscloud.com/
+    )
 )
 
 if not defined last_option (
