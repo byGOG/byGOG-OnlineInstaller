@@ -14,7 +14,7 @@ ECHO Installing %NAME%...
 start /wait %TEMP%\%OUTPUT% /S
 
 ECHO Creating a shortcut on the desktop.
-POWERSHELL; Start-Process cmd -ArgumentList '/c mklink %PUBLIC%\Desktop\%NAME%.lnk %SYSTEMDRIVE%\PROGRA~1\%NAME%\%OUTPUT%' -WindowStyle Hidden -Verb RunAs -Wait
+POWERSHELL; Start-Process cmd -ArgumentList '/c mklink %PUBLIC%\Desktop\%NAME%.lnk %SYSTEMDRIVE%\PROGRA~1\%NAME%\%NAME%.exe' -WindowStyle Hidden -Verb RunAs -Wait
 
 ECHO Cleaning temporary files...
 DEL %TEMP%\%OUTPUT%
