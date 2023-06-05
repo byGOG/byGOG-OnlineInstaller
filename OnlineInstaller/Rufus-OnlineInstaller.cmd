@@ -34,5 +34,3 @@ POWERSHELL Start-Process cmd -ArgumentList '/c mklink "%PUBLIC%\Desktop\%NAME%.l
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------
-
-TIMEOUT /T 10

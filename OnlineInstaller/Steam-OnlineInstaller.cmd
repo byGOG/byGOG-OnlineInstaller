@@ -19,5 +19,3 @@ ECHO Cleaning temporary files...
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------
-
-TIMEOUT /T 10

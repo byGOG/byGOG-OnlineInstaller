@@ -10,5 +10,3 @@ rmdir /s /q %TEMP%\chocolatey
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 echo ---------------------------------------------------
-
-TIMEOUT /T 10

@@ -33,5 +33,3 @@ del %temp%\version.txt
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 echo ---------------------------------------------------
-
-timeout /T 10

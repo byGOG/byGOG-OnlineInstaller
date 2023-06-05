@@ -7,5 +7,3 @@ powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; iwr -u
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------
-
-TIMEOUT /T 10
