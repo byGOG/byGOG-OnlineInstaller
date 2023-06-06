@@ -13,19 +13,26 @@ echo                                             / /_/ / /_/ / /_/ / /_/ / /_/ /
 echo                                            /_.___/\__, /\____/\____/\____/   
 echo                                                  /____/                      
 echo =================================================================================================================
-echo                                               ONLINE SOFTWARE INSTALLER
-echo                                                     [sordum.net] 
+echo                                             ONLINE SOFTWARE INSTALLER
+echo                                                    [sordum.net] 
 echo =================================================================================================================
-echo [n6] .NET Desktop Runtime 6.0  [dl] DeepL                       [ot] Office Tool Plus   [sy] Spotify 
-echo [7z] 7-Zip                     [dc] Discord                     [pt] PowerToys          [sm] Steam
-echo [ap] AIMP                      [et] Everything                  [pv] ProtonVPN          [so] Stremio 
-echo [ad] AnyDesk                   [gc] Google Chrome               [qt] qBittorrent        [tv] TeamViewer
-echo [bw] Bitwarden                 [gd] Google Drive                [rs] Rufus              [tg] Telegram
-echo [cc] CCleaner                  [id] Internet Download Manager   [sb] Sandboxie          [vs] Visual Studio Code
-echo [cl] Chocolatey                [mf] Mozilla Firefox             [sp] Scoop              [vm] VLC Media Player 
-echo [cq] CopyQ                     [np] Notepad++                   [sx] ShareX             [wr] WinRAR       
-echo [kc] K-Lite Codec Pack Mega    [bc] Bulk Crap Uninstaller       [dr] DriversCloud.com                                         
-echo                                                       [e] Exit 
+echo ==================================================( with cURL )==================================================
+echo [7z] 7-Zip                   [dl] DeepL                       [ot] Office Tool Plus   [sy] Spotify 
+echo [ap] AIMP                    [dc] Discord                     [pt] PowerToys          [sm] Steam
+echo [ad] AnyDesk                 [et] Everything                  [pv] ProtonVPN          [so] Stremio 
+echo [bw] Bitwarden               [gc] Google Chrome               [qt] qBittorrent        [tv] TeamViewer
+echo [cc] CCleaner                [gd] Google Drive                [rs] Rufus              [tg] Telegram
+echo [cl] Chocolatey              [id] Internet Download Manager   [sb] Sandboxie          [vs] Visual Studio Code
+echo [cq] CopyQ                   [mf] Mozilla Firefox             [sp] Scoop              [vm] VLC Media Player 
+echo [kc] K-Lite Codec Pack Mega  [np] Notepad++                   [sx] ShareX             [wr] WinRAR       
+echo [bc] Bulk Crap Uninstaller          
+echo =================================================( with WinGET )=================================================
+echo [vc] Visual C++ Redist       [nr] .NET Desktop Runtime        [nf] .NET Framework     [dx] DirectX 
+echo [vw] VMware Workstation Pro            
+echo ==================================================( with Web )===================================================
+echo [st] sordum.net              [sg] sordum.org                  [dr] DriversCloud.com
+echo =================================================================================================================
+echo                                                     [e] Exit 
 
 echo =================================================================================================================
 set choices=
@@ -62,10 +69,6 @@ for %%o in (!options!) do (
       if "%%o"=="wr" (
         echo Installing WinRAR...
         curl -sL#o "%TEMP%\WinRAR-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/WinRAR-OnlineInstaller.cmd" && CALL %TEMP%\WinRAR-OnlineInstaller.cmd
-    )
-	  if "%%o"=="n6" (
-        echo Installing .NET Desktop Runtime 6.0...
-        curl -sL#o "%TEMP%\.NETDesktopRuntime6.0-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/.NETDesktopRuntime6.0-OnlineInstaller.cmd" && CALL %TEMP%\.NETDesktopRuntime6.0-OnlineInstaller.cmd
     )
 	  if "%%o"=="ap" (
         echo Installing AIMP...
@@ -178,6 +181,49 @@ for %%o in (!options!) do (
 	  if "%%o"=="dr" (
         echo DriversCloud.com...
         start https://www.driverscloud.com/
+    )
+	  if "%%o"=="dx" (
+        echo Installing DirectX...
+        winget install --id Microsoft.DirectX --accept-source-agreements --source winget
+    )
+      if "%%o"=="nf" (
+        echo Installing .NET Framework...
+		winget install --id Microsoft.DotNet.Framework.DeveloperPack_4 --source winget --accept-source-agreements
+    )
+	  if "%%o"=="nr" (
+        echo Installing .NET Desktop Runtime...
+		winget install --id Microsoft.DotNet.DesktopRuntime.3_1 --source winget --accept-source-agreements
+		winget install --id Microsoft.DotNet.DesktopRuntime.5 --source winget --accept-source-agreements
+		winget install --id Microsoft.DotNet.DesktopRuntime.6 --source winget --accept-source-agreements
+		winget install --id Microsoft.DotNet.DesktopRuntime.7 --source winget --accept-source-agreements
+		winget install --id Microsoft.DotNet.DesktopRuntime.Preview --source winget --accept-source-agreements
+    )
+	  if "%%o"=="vc" (
+        echo Installing Visual C++ Redist...
+		winget install --id Microsoft.VCRedist.2005.x86 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2005.x64 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2008.x86 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2008.x64 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2010.x64 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2010.x86 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2012.x86 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2012.x64 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2013.x86 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2013.x64 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2015+.x86 --source winget --accept-source-agreements
+		winget install --id Microsoft.VCRedist.2015+.x64 --source winget --accept-source-agreements
+    )
+	  if "%%o"=="vw" (
+        echo Installing VMware Workstation Pro ...
+        winget install --id=VMware.WorkstationPro --source winget --accept-source-agreements
+	)
+	  if "%%o"=="st" (
+        echo sordum.net...
+        start https://www.sordum.net/
+    )
+	  if "%%o"=="sg" (
+        echo sordum.org...
+        start https://www.sordum.org/
     )
 )
 
