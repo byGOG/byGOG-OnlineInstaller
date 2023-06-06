@@ -9,17 +9,16 @@ TITLE %NAME% Online Installer
 
 ECHO ---------------------------------------------------
 ECHO Downloading %NAME%:%VERSION%
-	 curl -# -L -o %TEMP%\%OUTPUT% %MY_URL%
+	CURL -# -L -o %TEMP%\%OUTPUT% %MY_URL%
 
 ECHO Installing %NAME%...
-	 START /wait %TEMP%\%OUTPUT% /silent
+	START /wait %TEMP%\%OUTPUT% /silent
+	 
+ECHO Cleaning temporary files...
+	DEL %TEMP%\%OUTPUT%
 
 ECHO Closing %NAME%...
-	 PING 127.0.0.1 -n 6 > nul
-	 POWERSHELL -Command "Stop-Process -Name Spotify"
-
-ECHO Cleaning temporary files...
-	 DEL %TEMP%\%OUTPUT%
+	POWERSHELL -Command "while (!(Get-Process -Name Spotify -ErrorAction SilentlyContinue)) { Start-Sleep -Milliseconds 500 }; Stop-Process -Name Spotify"
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------

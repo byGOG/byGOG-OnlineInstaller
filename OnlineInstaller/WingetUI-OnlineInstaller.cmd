@@ -16,14 +16,8 @@ ECHO Installing %NAME%...
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%
 	 
-ECHO Window closing %NAME%...
-    TASKLIST | FIND /I "wingetui.exe" >NUL
-if errorlevel 1 (
-    ECHO WingetUI.exe has been closed.
-) else (
-    ECHO WingetUI.exe is still running. Closing it...
-    TASKKILL /F /IM "wingetui.exe" >NUL
-)
+ECHO Closing %NAME%...
+	 POWERSHELL -Command "while (!(Get-Process -Name wingetui -ErrorAction SilentlyContinue)) { Start-Sleep -Milliseconds 500 }; Stop-Process -Name wingetui"
 	 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------

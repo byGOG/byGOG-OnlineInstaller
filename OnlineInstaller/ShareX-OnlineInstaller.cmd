@@ -11,14 +11,13 @@ SET "URL=https://github.com/ShareX/ShareX/releases/download/v%VERSION%/ShareX-%V
 
 ECHO ---------------------------------------------------
 ECHO Downloading %NAME%:%VERSION%
-	 curl -# -L -o %TEMP%\%OUTPUT% "%URL%"
+	curl -# -L -o %TEMP%\%OUTPUT% "%URL%"
 
 ECHO Installing %NAME%...
-	 start /wait %TEMP%\%OUTPUT% /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+	start /wait %TEMP%\%OUTPUT% /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 
-ECHO Window minimized or closing %NAME%...
-	 PING 127.0.0.1 -n 6 > nul
-	 powershell -Command "Get-Process ShareX | ForEach-Object { $_.CloseMainWindow() }"
+ECHO Closing %NAME%...
+POWERSHELL -Command "while (!(Get-Process -Name ShareX -ErrorAction SilentlyContinue)) { Start-Sleep -Milliseconds 500 }; Stop-Process -Name ShareX" 
 
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%
