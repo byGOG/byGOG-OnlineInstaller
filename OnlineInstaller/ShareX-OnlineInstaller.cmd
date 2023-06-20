@@ -17,7 +17,8 @@ ECHO Installing %NAME%...
 	start /wait %TEMP%\%OUTPUT% /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 
 ECHO Closing %NAME%...
-POWERSHELL -Command "while (!(Get-Process -Name ShareX -ErrorAction SilentlyContinue)) { Start-Sleep -Milliseconds 500 }; Stop-Process -Name ShareX" 
+    PING 127.0.0.1 -n 15 > nul
+    powershell -Command "Get-Process ShareX | ForEach-Object { $_.CloseMainWindow() }"
 
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%

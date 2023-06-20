@@ -18,7 +18,8 @@ ECHO Cleaning temporary files...
 	DEL %TEMP%\%OUTPUT%
 
 ECHO Closing %NAME%...
-	POWERSHELL -Command "while (!(Get-Process -Name Spotify -ErrorAction SilentlyContinue)) { Start-Sleep -Milliseconds 500 }; Stop-Process -Name Spotify"
+	PING 127.0.0.1 -n 15 > nul
+	powershell -Command "Get-Process Spotify | ForEach-Object { $_.CloseMainWindow() }"
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------
