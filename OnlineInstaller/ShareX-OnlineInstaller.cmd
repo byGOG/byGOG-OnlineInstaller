@@ -16,10 +16,6 @@ ECHO Downloading %NAME%:%VERSION%
 ECHO Installing %NAME%...
 	start /wait %TEMP%\%OUTPUT% /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
 
-ECHO Closing %NAME%...
-    PING 127.0.0.1 -n 15 > nul
-    powershell -Command "Get-Process ShareX | ForEach-Object { $_.CloseMainWindow() }"
-
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%
 

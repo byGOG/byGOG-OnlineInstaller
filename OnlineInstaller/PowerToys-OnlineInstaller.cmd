@@ -19,10 +19,6 @@ ECHO Installing %NAME%...
 
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%
-	 
-ECHO Window minimized or closing %NAME%...
-	 PING 127.0.0.1 -n 15 > nul
-	 powershell -Command "Get-Process PowerToys.Settings | ForEach-Object { $_.CloseMainWindow() }"
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------

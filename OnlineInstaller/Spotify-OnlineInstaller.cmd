@@ -17,9 +17,5 @@ ECHO Installing %NAME%...
 ECHO Cleaning temporary files...
 	DEL %TEMP%\%OUTPUT%
 
-ECHO Closing %NAME%...
-	PING 127.0.0.1 -n 15 > nul
-	powershell -Command "Get-Process Spotify | ForEach-Object { $_.CloseMainWindow() }"
-
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------

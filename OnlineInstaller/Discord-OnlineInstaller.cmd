@@ -13,10 +13,6 @@ ECHO Downloading %NAME%
 ECHO Installing %NAME%...
 	 start /wait %TEMP%\%OUTPUT%
 
-ECHO Window minimized or closing %NAME%...
-	 PING 127.0.0.1 -n 6 > nul
-	 powershell -Command "Get-Process Discord | ForEach-Object { $_.CloseMainWindow() }"
-
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%
 
