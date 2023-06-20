@@ -6,7 +6,7 @@ TITLE %NAME% Online Installer
 
 REM Set the download URL based on the processor architecture
 IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
-    SET "URL=https://www.aimp.ru/?do=download.file&id=29"
+    SET "URL=https://www.aimp.ru/?do=download.file&id=3"
 ) ELSE (
     SET "URL=https://www.aimp.ru/?do=download.file&id=4"
 )
