@@ -11,7 +11,7 @@ ECHO Downloading %NAME%:%VERSION%
 	 curl -L#o %TEMP%\%OUTPUT% "%URL%"
 
 ECHO Installing %NAME%...
-	 start /wait %TEMP%\%OUTPUT% /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-
+	 start /wait %TEMP%\%OUTPUT% /NoAutoStart /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- 
 
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%
