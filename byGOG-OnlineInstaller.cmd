@@ -25,10 +25,10 @@ echo [cc] CCleaner                [gd] Google Drive                [rs] Rufus   
 echo [cl] Chocolatey              [id] Internet Download Manager   [sb] Sandboxie          [vs] Visual Studio Code
 echo [cq] CopyQ                   [mf] Mozilla Firefox             [sp] Scoop              [vm] VLC Media Player 
 echo [kc] K-Lite Codec Pack Mega  [np] Notepad++                   [sx] ShareX             [wr] WinRAR       
-echo [bc] Bulk Crap Uninstaller         
+echo [bc] Bulk Crap Uninstaller   [qt] qBittorrent EE    
 echo =================================================( with WinGET )=================================================
 echo [vc] Visual C++ Redist       [nr] .NET Desktop Runtime        [nf] .NET Framework     [dx] DirectX 
-echo [vw] VMware Workstation Pro  [qt] qBittorrent          
+echo [vw] VMware Workstation Pro  [cg] ChatGPT
 echo ==================================================( with Web )===================================================
 echo [st] sordum.net              [sg] sordum.org                  [dr] DriversCloud.com
 echo =================================================================================================================
@@ -142,7 +142,7 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\BulkCrapUninstaller-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/BulkCrapUninstaller-OnlineInstaller.cmd" && CALL %TEMP%\BulkCrapUninstaller-OnlineInstaller.cmd
     )
 	  if "%%o"=="qt" (
-        winget install --id qBittorrent.qBittorrent --accept-source-agreements --source winget
+        curl -sL#o "%TEMP%\qBittorrentEE-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/qBittorrentEE-OnlineInstaller.cmd" && CALL %TEMP%\qBittorrentEE-OnlineInstaller.cmd
     )
 	  if "%%o"=="dr" (
         echo DriversCloud.com...
@@ -188,6 +188,9 @@ for %%o in (!options!) do (
     )
 	  if "%%o"=="wu" (
         curl -sL#o "%TEMP%\WingetUI-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/WingetUI-OnlineInstaller.cmd" && CALL %TEMP%\WingetUI-OnlineInstaller.cmd
+    )
+	  if "%%o"=="cg" (
+		winget install --id lencx.ChatGPT --source winget --accept-source-agreements
     )
 )
 
