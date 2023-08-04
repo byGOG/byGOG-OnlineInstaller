@@ -1,7 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-SET "NAME=by GOG [sordum.net]"
-TITLE %NAME%
+TITLE by GOG [sordum.net]
 
 :menu
 cls
@@ -67,7 +66,7 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\AIMP-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/AIMP-OnlineInstaller.cmd" && CALL %TEMP%\AIMP-OnlineInstaller.cmd
     )
 	  if "%%o"=="ad" (
-        curl -sL#o "%TEMP%\AnyDesk-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/AnyDesk-OnlineInstaller.cmd" && CALL %TEMP%\AnyDesk-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\AnyDesk-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/AnyDesk-OnlineInstaller.cmd" && CALL %TEMP%\AnyDesk-OnlineInstaller.cmd && powershell -Command "Start-Process powershell -WindowStyle Hidden -ArgumentList '-Command Stop-Process -Name AnyDesk -Force' -Verb RunAs"
     )
 	  if "%%o"=="bw" (
         curl -sL#o "%TEMP%\Bitwarden-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Bitwarden-OnlineInstaller.cmd" && CALL %TEMP%\Bitwarden-OnlineInstaller.cmd
@@ -85,13 +84,13 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\DeepL-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/DeepL-OnlineInstaller.cmd" && CALL %TEMP%\DeepL-OnlineInstaller.cmd
     )
 	  if "%%o"=="dc" (
-        curl -sL#o "%TEMP%\Discord-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Discord-OnlineInstaller.cmd" && CALL %TEMP%\Discord-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\Discord-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Discord-OnlineInstaller.cmd" && CALL %TEMP%\Discord-OnlineInstaller.cmd && Powershell -Command "Stop-Process -Name Discord"
     )
 	  if "%%o"=="et" (
         curl -sL#o "%TEMP%\Everything-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Everything-OnlineInstaller.cmd" && CALL %TEMP%\Everything-OnlineInstaller.cmd
     )
 	  if "%%o"=="gd" (
-        curl -sL#o "%TEMP%\GoogleDrive-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/GoogleDrive-OnlineInstaller.cmd" && CALL %TEMP%\GoogleDrive-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\GoogleDrive-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/GoogleDrive-OnlineInstaller.cmd" && CALL %TEMP%\GoogleDrive-OnlineInstaller.cmd  && Powershell -Command "Stop-Process -Name GoogleDriveFS"
     )
 	  if "%%o"=="id" (
         curl -sL#o "%TEMP%\InternetDownloadManager-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/InternetDownloadManager-OnlineInstaller.cmd" && CALL %TEMP%\InternetDownloadManager-OnlineInstaller.cmd
@@ -100,7 +99,7 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\OfficeToolPlus-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/OfficeToolPlus-OnlineInstaller.cmd" && CALL %TEMP%\OfficeToolPlus-OnlineInstaller.cmd
     )
 	  if "%%o"=="pt" (
-        curl -sL#o "%TEMP%\PowerToys-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/PowerToys-OnlineInstaller.cmd" && CALL %TEMP%\PowerToys-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\PowerToys-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/PowerToys-OnlineInstaller.cmd" && CALL %TEMP%\PowerToys-OnlineInstaller.cmd && powershell -Command "Start-Process powershell -WindowStyle Hidden -ArgumentList '-Command Stop-Process -Name PowerToys -Force' -Verb RunAs"
     )
 	  if "%%o"=="pv" (
         curl -sL#o "%TEMP%\ProtonVPN-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/ProtonVPN-OnlineInstaller.cmd" && CALL %TEMP%\ProtonVPN-OnlineInstaller.cmd
@@ -115,10 +114,10 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\Scoop-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Scoop-OnlineInstaller.cmd" && CALL %TEMP%\Scoop-OnlineInstaller.cmd
     )
 	  if "%%o"=="sx" (
-        curl -sL#o "%TEMP%\ShareX-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/ShareX-OnlineInstaller.cmd" && CALL %TEMP%\ShareX-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\ShareX-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/ShareX-OnlineInstaller.cmd" && CALL %TEMP%\ShareX-OnlineInstaller.cmd && Powershell -Command "Stop-Process -Name ShareX"
     )
 	  if "%%o"=="sy" (
-        curl -sL#o "%TEMP%\Spotify-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Spotify-OnlineInstaller.cmd" && CALL %TEMP%\Spotify-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\Spotify-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Spotify-OnlineInstaller.cmd" && CALL %TEMP%\Spotify-OnlineInstaller.cmd && Powershell -Command "Stop-Process -Name Spotify"
     )
 	  if "%%o"=="sm" (
         curl -sL#o "%TEMP%\Steam-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Steam-OnlineInstaller.cmd" && CALL %TEMP%\Steam-OnlineInstaller.cmd
@@ -133,7 +132,7 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\Telegram-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Telegram-OnlineInstaller.cmd" && CALL %TEMP%\Telegram-OnlineInstaller.cmd
     )
 	  if "%%o"=="vs" (
-        curl -sL#o "%TEMP%\VisualStudioCode-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/VisualStudioCode-OnlineInstaller.cmd" && CALL %TEMP%\VisualStudioCode-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\VisualStudioCode-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/VisualStudioCode-OnlineInstaller.cmd" && CALL %TEMP%\VisualStudioCode-OnlineInstaller.cmd && Powershell -Command "Stop-Process -Name Code"
     )
 	  if "%%o"=="kc" (
         curl -sL#o "%TEMP%\K-LiteCodecPackMega-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/K-LiteCodecPackMega-OnlineInstaller.cmd" && CALL %TEMP%\K-LiteCodecPackMega-OnlineInstaller.cmd
@@ -187,7 +186,7 @@ for %%o in (!options!) do (
         start https://www.sordum.org/
     )
 	  if "%%o"=="wu" (
-        curl -sL#o "%TEMP%\WingetUI-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/WingetUI-OnlineInstaller.cmd" && CALL %TEMP%\WingetUI-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\WingetUI-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/WingetUI-OnlineInstaller.cmd" && CALL %TEMP%\WingetUI-OnlineInstaller.cmd && Powershell -Command "Stop-Process -Name wingetui"
     )
 	  if "%%o"=="cg" (
 		winget install --id lencx.ChatGPT --source winget --accept-source-agreements
@@ -195,8 +194,8 @@ for %%o in (!options!) do (
 )
 
 if not defined last_option (
-    goto menu
-	TITLE %NAME%
+TITLE by GOG [sordum.net] && goto menu
+	
 )
 
 if "%last_option%"=="e" (
@@ -204,6 +203,5 @@ if "%last_option%"=="e" (
     exit
 )
 
-pause
-TITLE %NAME%
+TITLE by GOG [sordum.net] && pause
 goto menu
