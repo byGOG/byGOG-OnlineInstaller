@@ -16,7 +16,7 @@ ECHO Downloading %NAME%
 	 curl -# -L -o %TEMP%\%OUTPUT% "%URL%"
 
 ECHO Installing %NAME%...
-	 start /wait %TEMP%\%OUTPUT% /VERYSILENT /NORESTART /MERGETASKS=addcontextmenufiles,addcontextmenufolders,associatewithfiles,!runcode,!desktopicon
+	 start /wait %TEMP%\%OUTPUT% /VERYSILENT /NORESTART /MERGETASKS="addcontextmenufiles,addcontextmenufolders,associatewithfiles,!runcode,desktopicon"
 
 ECHO Cleaning temporary files...
 	 DEL %TEMP%\%OUTPUT%
