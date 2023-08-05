@@ -24,12 +24,12 @@ echo [cc] CCleaner                [gd] Google Drive                [rs] Rufus   
 echo [cl] Chocolatey              [id] Internet Download Manager   [sb] Sandboxie          [vs] Visual Studio Code
 echo [cq] CopyQ                   [mf] Mozilla Firefox             [sp] Scoop              [vm] VLC Media Player 
 echo [kc] K-Lite Codec Pack Mega  [np] Notepad++                   [sx] ShareX             [wr] WinRAR       
-echo [bc] Bulk Crap Uninstaller   [qt] qBittorrent EE    
+echo [bc] Bulk Crap Uninstaller   [qt] qBittorrent EE              [cg] ChatGPT
 echo =================================================( with WinGET )=================================================
 echo [vc] Visual C++ Redist       [nr] .NET Desktop Runtime        [nf] .NET Framework     [dx] DirectX 
-echo [vw] VMware Workstation Pro  [cg] ChatGPT
+echo [vw] VMware Workstation Pro  [dr] DriversCloud.com
 echo ==================================================( with Web )===================================================
-echo [st] sordum.net              [sg] sordum.org                  [dr] DriversCloud.com
+echo                              [st] sordum.net                  [sg] sordum.org                  
 echo =================================================================================================================
 echo                                                     [e] Exit 
 echo =================================================================================================================
@@ -144,38 +144,37 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\qBittorrentEE-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/qBittorrentEE-OnlineInstaller.cmd" && CALL %TEMP%\qBittorrentEE-OnlineInstaller.cmd
     )
 	  if "%%o"=="dr" (
-        echo DriversCloud.com...
-        start https://www.driverscloud.com/
+		title DriversCloud & winget install -h --accept-package-agreements --accept-source-agreements --id Cybelsoft.DriversCloud
     )
 	  if "%%o"=="dx" (
-        winget install --id Microsoft.DirectX --accept-source-agreements --source winget
+		title DirectX & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.DirectX
     )
       if "%%o"=="nf" (
-		winget install --id Microsoft.DotNet.Framework.DeveloperPack_4 --source winget --accept-source-agreements
+		title DotNet & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.DotNet.Framework.DeveloperPack_4
     )
 	  if "%%o"=="nr" (
-		winget install --id Microsoft.DotNet.DesktopRuntime.3_1 --source winget --accept-source-agreements
-		winget install --id Microsoft.DotNet.DesktopRuntime.5 --source winget --accept-source-agreements
-		winget install --id Microsoft.DotNet.DesktopRuntime.6 --source winget --accept-source-agreements
-		winget install --id Microsoft.DotNet.DesktopRuntime.7 --source winget --accept-source-agreements
-		winget install --id Microsoft.DotNet.DesktopRuntime.Preview --source winget --accept-source-agreements
+	   title Desktop Runtime & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.DotNet.DesktopRuntime.3_1
+	   title Desktop Runtime & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.DotNet.DesktopRuntime.5
+	   title Desktop Runtime & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.DotNet.DesktopRuntime.6
+	   title Desktop Runtime & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.DotNet.DesktopRuntime.7
+	   title Desktop Runtime & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.DotNet.DesktopRuntime.Preview
     )
 	  if "%%o"=="vc" (
-		winget install --id Microsoft.VCRedist.2005.x86 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2005.x64 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2008.x86 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2008.x64 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2010.x64 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2010.x86 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2012.x86 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2012.x64 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2013.x86 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2013.x64 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2015+.x86 --source winget --accept-source-agreements
-		winget install --id Microsoft.VCRedist.2015+.x64 --source winget --accept-source-agreements
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2005.x86
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2005.x64
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2008.x86
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2008.x64
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2010.x64
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2010.x86
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2012.x86
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2012.x64
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2013.x86
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2013.x64
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2015+.x86
+	  title VC Redist & winget install -h --accept-package-agreements --accept-source-agreements --id Microsoft.VCRedist.2015+.x64
     )
 	  if "%%o"=="vw" (
-        winget install --id=VMware.WorkstationPro --source winget --accept-source-agreements
+		title VMware Workstation & winget install -h --accept-package-agreements --accept-source-agreements --id VMware.WorkstationPro
 	)
 	  if "%%o"=="st" (
         echo sordum.net...
@@ -189,7 +188,7 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\WingetUI-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/WingetUI-OnlineInstaller.cmd" && CALL %TEMP%\WingetUI-OnlineInstaller.cmd && Powershell -Command "Stop-Process -Name wingetui"
     )
 	  if "%%o"=="cg" (
-		winget install --id lencx.ChatGPT --source winget --accept-source-agreements
+		curl -sL#o "%TEMP%\ChatGPT-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/ChatGPT-OnlineInstaller.cmd" && CALL %TEMP%\ChatGPT-OnlineInstaller.cmd
     )
 )
 
