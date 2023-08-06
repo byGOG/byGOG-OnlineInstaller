@@ -26,8 +26,8 @@ echo [cq] CopyQ                   [mf] Mozilla Firefox             [sp] Scoop   
 echo [kc] K-Lite Codec Pack Mega  [np] Notepad++                   [sx] ShareX             [wr] WinRAR       
 echo [bc] Bulk Crap Uninstaller   [qt] qBittorrent EE              [cg] ChatGPT
 echo =================================================( with WinGET )=================================================
-echo [vc] Visual C++ Redist       [nr] .NET Desktop Runtime        [nf] .NET Framework     [dx] DirectX 
-echo [vw] VMware Workstation Pro  [dr] DriversCloud.com
+echo [wg] WinGet                  [vc] Visual C++ Redist           [nr] Desktop Runtime    [nf] Framework
+echo [vw] VMware Workstation Pro  [dr] DriversCloud.com            [dx] DirectX
 echo ==================================================( with Web )===================================================
 echo                              [st] sordum.net                  [sg] sordum.org                  
 echo =================================================================================================================
@@ -189,6 +189,9 @@ for %%o in (!options!) do (
     )
 	  if "%%o"=="cg" (
 		curl -sL#o "%TEMP%\ChatGPT-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/ChatGPT-OnlineInstaller.cmd" && CALL %TEMP%\ChatGPT-OnlineInstaller.cmd
+    )
+	  if "%%o"=="wg" (
+		curl -sL#o "%TEMP%\WinGet-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/WinGet-OnlineInstaller.cmd" && CALL %TEMP%\WinGet-OnlineInstaller.cmd
     )
 )
 
