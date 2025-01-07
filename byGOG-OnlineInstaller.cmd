@@ -18,17 +18,17 @@ echo [7z] 7-Zip                   [dl] DeepL                       [ot] Office T
 echo [ap] AIMP                    [dc] Discord                     [pt] PowerToys          [sm] Steam
 echo [ad] AnyDesk                 [et] Everything                  [pv] ProtonVPN          [so] Stremio 
 echo [bw] Bitwarden               [gc] Google Chrome               [tv] TeamViewer         [bc] Bulk Crap Uninstaller 
-echo [cc] CCleaner                [gd] Google Drive                [rs] Rufus              [tg] Telegram
+echo [gb] GoodbyeDPI              [gd] Google Drive                [rs] Rufus              [tg] Telegram
 echo [qt] qBittorrent EE          [id] Internet Download Manager   [sb] Sandboxie          [vs] Visual Studio Code
 echo [cq] CopyQ                   [mf] Mozilla Firefox             [cg] ChatGPT            [vm] VLC Media Player 
 echo [kc] K-Lite Codec Pack Mega  [np] Notepad++                   [sx] ShareX             [wr] WinRAR    
-echo [gb] GoodbyeDPI              [zb] ZenBrowser                      
+echo [zb] Zen Browser             [uu] UniGetUI         
 echo =================================================( with WinGET )=================================================
 echo [vc] Visual C++ Redist       [nr] Desktop Runtime             [nf] Framework          [dx] DirectX
-echo [dr] DriversCloud.com        [uu] UniGetUI           
+echo [dr] DriversCloud.com                  
 echo ==================================================( with Web )===================================================
 echo [nn] Ninite.com              [st] sordum.net                  [sg] sordum.org         [pp] PackagePicker.co 
-echo [rw] Winget.run              [wi] Winstall       
+echo [rw] Winget.run              [wi] Winstall                    [ao] AtlasOS            [ro] ReviOS
 echo =================================================================================================================
 echo                                              [e] Exit = [u] Upgrade All
 set choices=
@@ -68,9 +68,6 @@ for %%o in (!options!) do (
     )
 	  if "%%o"=="bw" (
         curl -sL#o "%TEMP%\Bitwarden-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Bitwarden-OnlineInstaller.cmd" && CALL %TEMP%\Bitwarden-OnlineInstaller.cmd
-    )
-	  if "%%o"=="cc" (
-        curl -sL#o "%TEMP%\CCleaner-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/CCleaner-OnlineInstaller.cmd" && CALL %TEMP%\CCleaner-OnlineInstaller.cmd
     )
 	  if "%%o"=="cl" (
         curl -sL#o "%TEMP%\Chocolatey-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/Chocolatey-OnlineInstaller.cmd" && CALL %TEMP%\Chocolatey-OnlineInstaller.cmd
@@ -142,10 +139,10 @@ for %%o in (!options!) do (
         curl -sL#o "%TEMP%\qBittorrentEE-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/qBittorrentEE-OnlineInstaller.cmd" && CALL %TEMP%\qBittorrentEE-OnlineInstaller.cmd
     )
 	  if "%%o"=="gb" (
-        curl -sL#o "%TEMP%\qBittorrentEE-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/GoodbyeDPI-OnlineInstaller.cmd" && CALL %TEMP%\GoodbyeDPI-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\GoodbyeDPI-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/GoodbyeDPI-OnlineInstaller.cmd" && CALL %TEMP%\GoodbyeDPI-OnlineInstaller.cmd
     )
 	  if "%%o"=="zb" (
-        curl -sL#o "%TEMP%\qBittorrentEE-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/ZenBrowser-OnlineInstaller.cmd" && CALL %TEMP%\ZenBrowser-OnlineInstaller.cmd
+        curl -sL#o "%TEMP%\ZenBrowser-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/ZenBrowser-OnlineInstaller.cmd" && CALL %TEMP%\ZenBrowser-OnlineInstaller.cmd
     )
 	  if "%%o"=="dr" (
 		title DriversCloud & winget install -h --accept-package-agreements --accept-source-agreements --id Cybelsoft.DriversCloud
@@ -203,6 +200,14 @@ for %%o in (!options!) do (
 	  if "%%o"=="wi" (
         echo winstall...
         start https://winstall.app/
+    )
+		  if "%%o"=="ao" (
+        echo AtlasOS...
+        start https://atlasos.net/
+    )
+		  if "%%o"=="ro" (
+        echo ReviOS...
+        start https://www.revi.cc/
     )
 	  if "%%o"=="uu" (
         curl -sL#o "%TEMP%\UniGetUI-OnlineInstaller.cmd" "https://raw.githubusercontent.com/byGOG/byGOG-OnlineInstaller/main/OnlineInstaller/UniGetUI-OnlineInstaller.cmd" && CALL %TEMP%\UniGetUI-OnlineInstaller.cmd
