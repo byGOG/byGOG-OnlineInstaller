@@ -4,7 +4,7 @@
 $output = "7z.exe"
 $name = "7-Zip"
 
-Write-Host "Başlık: $name Çevrimiçi Yükleyici" -ForegroundColor Cyan
+Write-Host "$name Çevrimiçi Yükleyici" -ForegroundColor Cyan
 
 # Sürüm numarasını kontrol et
 Write-Host "En son $name sürümü kontrol ediliyor..." -ForegroundColor Yellow
@@ -38,5 +38,5 @@ Write-Host "Geçici dosyalar temizleniyor..." -ForegroundColor Yellow
 # Geçici dosyaları temizle
 Remove-Item -Path $tempFile -Force
 
-Write-Host "Yükleme başarıyla tamamlandı! GOG tarafından [sordum.net]" -ForegroundColor Cyan
+Write-Host "Yükleme başarıyla tamamlandı! by GOG [sordum.net]" -ForegroundColor Cyan
 Write-Host "---------------------------------------------------"
