@@ -32,7 +32,7 @@ powershell Expand-Archive -LiteralPath '%SYSTEMDRIVE%\tools\Office_Tool.zip' -De
 
 REM Create a shortcut on the desktop
 ECHO Creating a shortcut on the desktop.
-POWERSHELL Start-Process cmd -ArgumentList '/c mklink "%PUBLIC%\Desktop\OfficeToolPlus.lnk" "%SYSTEMDRIVE%\tools\OFFICE~1\OFFICE~2.EXE"' -WindowStyle Hidden -Verb RunAs -Wait
+mklink "%PUBLIC%\Desktop\Office Tool Plus" "C:\tools\Office Tool\Office Tool Plus.exe"
 
 ECHO Cleaning temporary files...
 DEL %SYSTEMDRIVE%\tools\Office_Tool.zip
