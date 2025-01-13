@@ -32,7 +32,7 @@ powershell Expand-Archive -LiteralPath '%SYSTEMDRIVE%\tools\Office_Tool.zip' -De
 
 REM Create a shortcut on the desktop
 ECHO Creating a shortcut on the desktop.
-mklink "%PUBLIC%\Desktop\Office Tool Plus" "C:\tools\Office Tool\Office Tool Plus.exe"
+powershell -Command "Start-Process -FilePath 'cmd.exe' -ArgumentList '/c mklink \"%PUBLIC%\Desktop\Office Tool Plus\" \"%SYSTEMDRIVE%\tools\Office Tool\Office Tool Plus.exe\"' -Verb RunAs -Wait"
 
 ECHO Cleaning temporary files...
 DEL %SYSTEMDRIVE%\tools\Office_Tool.zip
@@ -40,3 +40,5 @@ DEL %TEMP%\version.txt
 
 ECHO Installation completed successfully! by GOG [sordum.net]
 ECHO ---------------------------------------------------
+
+
