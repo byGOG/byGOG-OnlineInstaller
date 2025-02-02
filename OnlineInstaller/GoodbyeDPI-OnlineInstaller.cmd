@@ -7,7 +7,7 @@ SET "VERSION="
 TITLE %NAME% Online Installer
 
 REM Get the latest version number from GitHub
-curl -sL https://github.com/ValdikSS/GoodbyeDPI/releases/latest | findstr /C:"GoodbyeDPI v" > %TEMP%\version.txt
+curl -sL https://github.com/ful1e5/Bibata_Cursor/releases/latest | findstr /C:"GoodbyeDPI v" > %TEMP%\version.txt
 FOR /F "tokens=6 delims=<> " %%G IN (%TEMP%\version.txt) DO SET "VERSION=%%G"
 SET "VERSION=%VERSION:v=%"
 
